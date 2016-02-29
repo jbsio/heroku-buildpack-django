@@ -204,6 +204,11 @@ source $BIN_DIR/steps/cryptography
 # GDAL support.
 source $BIN_DIR/steps/gdal
 
+# GEOS, GeoIP, Proj4, Gdal
+source $BIN_DIR/steps/geos
+source $BIN_DIR/steps/geoip
+source $BIN_DIR/steps/proj4
+
 # Install dependencies with Pip.
 source $BIN_DIR/steps/pip-install
 
@@ -220,6 +225,13 @@ set-env LD_LIBRARY_PATH '/app/.heroku/vendor/lib:/app/.heroku/python/lib:$LD_LIB
 set-default-env LANG en_US.UTF-8
 set-default-env PYTHONHASHSEED random
 set-default-env PYTHONPATH /app/
+
+# Geo stuff
+set-env GEOS_LIBRARY_PATH $GEOS_LIBRARY_PATH
+set-env GEOIP_LIBRARY_PATH $GEOIP_LIBRARY_PATH
+set-env GEOIP_GEOLITE_CITY_FILE $GEOIP_GEOLITE_CITY_FILE
+set-env PROJ4_LIBRARY_PATH $PROJ4_LIBRARY_PATH
+set-env GDAL_LIBRARY_PATH $GDAL_LIBRARY_PATH
 
 # Install sane-default script for $WEB_CONCURRENCY and $FORWARDED_ALLOW_IPS.
 cp $ROOT_DIR/vendor/python.gunicorn.sh $GUNICORN_PROFILE_PATH

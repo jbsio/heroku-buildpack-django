@@ -38,6 +38,6 @@ if [ ! -f $GEOLITECITY_FILE ]; then
     gunzip ${GEOLITECITY_FILE}.gz > /dev/null
 fi
 export GEOIP_LIBRARY_PATH=$GEOIP_DIST_DIR
-export GEOIP_GEOLITECITY_FILE=$GEOLITECITY_FILE
+export GEOIP_GEOLITE_CITY_FILE=$GEOLITECITY_FILE
 echo "GeoIP City Database installed at ${GEOIP_LIBRARY_PATH}/${GEOIP_GEOLITECITY_FILE}" | indent
 echo "GeoIP City Database accessible with env variables 'GEOIP_LIBRARY_PATH' and 'GEOIP_GEOLITECITY_FILE'" | indent

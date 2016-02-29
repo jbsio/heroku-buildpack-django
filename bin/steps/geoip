@@ -39,4 +39,5 @@ if [ ! -f $GEOLITECITY_FILE ]; then
 fi
 export GEOIP_LIBRARY_PATH=$GEOIP_DIST_DIR
 export GEOIP_GEOLITECITY_FILE=$GEOLITECITY_FILE
-echo "       GeoIP City Database is available at: $(pwd)/${GEOLITECITY_FILE}"
+echo "GeoIP City Database installed at ${GEOIP_LIBRARY_PATH}/${GEOIP_GEOLITECITY_FILE}" | indent
+echo "GeoIP City Database accessible with env variables 'GEOIP_LIBRARY_PATH' and 'GEOIP_GEOLITECITY_FILE'" | indent
